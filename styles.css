@@ -1,0 +1,72 @@
+#app {
+    font-family: "Slabo 27px", serif;
+}
+
+.card-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 300px;
+  min-height: 570px;
+  padding: 1em;
+  border: 2px solid rgb(43, 26, 0);
+  margin: 1em;
+  padding: 0.5em 1em;
+  background: rgb(255, 254, 251);
+}
+
+.product-description {
+    line-height: 1.8
+}
+
+.product-size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.product-size p {
+  margin-right: 1em;
+}
+
+.product-image {
+  max-width: 300px;
+}
+
+.buy-button {
+  font-family: "Slabo 27px", serif;
+  margin: auto;
+  background: rgb(255, 249, 234);
+  padding: .5em 1em;
+  text-transform: uppercase;
+  border: 1px solid rgb(43, 26, 0);
+  transition: ease-out 200ms;
+}
+
+.buy-button:hover {
+ filter: saturate(3);
+    transition: ease-in 200ms;
+}
+
+.cart {
+  margin: auto;
+  border: 2px solid rgb(43, 26, 0);
+  width: 25%;
+  padding: 2em;
+  text-align: center;
+  background: rgb(255, 254, 251);
+}

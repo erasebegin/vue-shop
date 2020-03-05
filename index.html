@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Vue Shop Page</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="cart">
+        <h2>Cart: {{cart}}</h2>
+      </div>
+      <div class="card-container">
+        <div v-for="product in products" :key="product.id">
+          <div class="product-card">
+            <h1>{{product.title}}</h1>
+            <a :href="product.link"
+              ><img
+                :src="product.image"
+                :alt="product.description"
+                class="product-image"
+            /></a>
+            <p v-if="product.inStock">In stock</p>
+            <p v-else>Sold out</p>
+            <p v-if="product.onSale">Now on sale!</p>
+            <div class="product-size" v-if="product.sizes">
+              <p>size:</p>
+              <select>
+                <option v-for="size in product.sizes">{{size}}</option>
+              </select>
+            </div>
+            <p class="product-description">{{product.description}}</p>
+            <button v-on:click="addToCart" :disabled="!product.inStock" class="buy-button">
+              Buy the thing
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
